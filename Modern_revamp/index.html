@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPCT Modern Executive Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="control-rail">
+      <div class="brand-lockup">
+        <img class="brand-logo" src="assets/spct-blue-boat-logo.png" alt="SPCT">
+        <div>
+          <div class="brand-title">Sparrows Point</div>
+          <div class="brand-subtitle">Container Terminal</div>
+        </div>
+      </div>
+
+      <section class="control-block">
+        <div class="control-label">Selection</div>
+        <div class="select-mode">
+          <button id="selection-mode" class="switch-button" data-action="toggle-selection-mode" aria-pressed="false">
+            <span class="switch-knob"></span>
+            <strong>Multi</strong>
+          </button>
+        </div>
+      </section>
+
+      <section class="control-block">
+        <div class="control-label">Portfolio</div>
+        <div id="project-picker" class="project-picker"></div>
+        <div class="control-row">
+          <button class="ghost-button" data-action="all-projects">All Projects</button>
+          <button class="ghost-button" data-action="construction-projects">Active Construction</button>
+        </div>
+      </section>
+
+      <section class="control-block">
+        <div class="control-label">Time Window</div>
+        <label class="date-field">
+          <span>From</span>
+          <input id="date-start" type="date">
+        </label>
+        <label class="date-field">
+          <span>To</span>
+          <input id="date-end" type="date">
+        </label>
+        <div class="control-row three">
+          <button class="ghost-button" data-action="window-week">Week</button>
+          <button class="ghost-button" data-action="window-month">Month</button>
+          <button class="ghost-button" data-action="window-3mo">3 mo</button>
+        </div>
+      </section>
+
+      <section class="control-block">
+        <div class="control-label">Views</div>
+        <nav class="view-nav" aria-label="Dashboard views">
+          <button class="view-button active" data-view="overview">Overview</button>
+          <button class="view-button" data-view="financials">Financials</button>
+          <button class="view-button" data-view="controls">Controls</button>
+          <button class="view-button" data-view="risks">Risks</button>
+          <button class="view-button" data-view="correspondence">Correspondence</button>
+        </nav>
+      </section>
+
+      <section class="control-block compact">
+        <div class="control-label">Data Feed</div>
+        <div id="data-feed-note" class="feed-note"></div>
+      </section>
+    </aside>
+
+    <main class="dashboard">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">Executive Dashboard</p>
+          <h1>Sparrows Point Container Terminal</h1>
+          <p id="portfolio-summary" class="hero-copy"></p>
+        </div>
+        <div class="hero-actions">
+          <button class="solid-button" data-action="export-json">Export View Data</button>
+          <button class="ghost-button light" data-action="reset-filter">Reset Filters</button>
+        </div>
+      </section>
+
+      <section id="kpi-grid" class="kpi-grid"></section>
+
+      <section class="content-grid overview-view view-section active">
+        <article class="panel span-8">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Capital Position</p>
+              <h2>Budget, Commitments, Invoicing</h2>
+            </div>
+            <span id="finance-subtitle" class="panel-note"></span>
+          </div>
+          <div id="finance-bars" class="chart-stage tall"></div>
+        </article>
+
+        <article class="panel span-4 inspector-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Drilldown</p>
+              <h2>Project Inspector</h2>
+            </div>
+          </div>
+          <div id="project-inspector"></div>
+        </article>
+
+        <article class="panel span-6">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Delivery Controls</p>
+              <h2>RFIs and Submittals</h2>
+            </div>
+          </div>
+          <div id="controls-donuts" class="donut-grid"></div>
+        </article>
+
+        <article class="panel span-6">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Program Schedule</p>
+              <h2>Milestone Gantt</h2>
+            </div>
+          </div>
+          <div id="project-gantt" class="chart-stage"></div>
+        </article>
+
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Weekly Project Update</p>
+              <h2>Summary, Issues, Wins, Risks, Lookahead</h2>
+            </div>
+          </div>
+          <div id="weekly-narrative-overview"></div>
+        </article>
+      </section>
+
+      <section class="content-grid financials-view view-section">
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Financial Drilldown</p>
+              <h2>Project Financial Waterfall</h2>
+            </div>
+          </div>
+          <div id="financial-waterfall" class="chart-stage tall"></div>
+        </article>
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Ranking</p>
+              <h2>Exposure Table</h2>
+            </div>
+          </div>
+          <div id="financial-table"></div>
+        </article>
+      </section>
+
+      <section class="content-grid controls-view view-section">
+        <article class="panel span-6">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">RFI Load</p>
+              <h2>Open and Overdue RFIs</h2>
+            </div>
+          </div>
+          <div id="rfi-chart" class="chart-stage"></div>
+        </article>
+        <article class="panel span-6">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Submittal Load</p>
+              <h2>Open and Overdue Submittals</h2>
+            </div>
+          </div>
+          <div id="submittal-chart" class="chart-stage"></div>
+        </article>
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">HSE</p>
+              <h2>Weekly HSE Detail</h2>
+            </div>
+          </div>
+          <div id="hse-table"></div>
+        </article>
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Source Media</p>
+              <h2>Bucket Photo and Attachment Records</h2>
+            </div>
+            <span class="panel-note">Read-only extract</span>
+          </div>
+          <div id="source-photo-feed" class="source-media-grid"></div>
+        </article>
+      </section>
+
+      <section class="content-grid risks-view view-section">
+        <article class="panel span-8">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Executive Actions</p>
+              <h2>Wins, Decisions, Risks, Actions Timeline</h2>
+            </div>
+          </div>
+          <div id="risk-gantt" class="chart-stage xlarge"></div>
+        </article>
+        <article class="panel span-4">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Risk Mix</p>
+              <h2>Category Distribution</h2>
+            </div>
+          </div>
+          <div id="risk-mix" class="chart-stage"></div>
+        </article>
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Lookahead</p>
+              <h2>Action Register</h2>
+            </div>
+          </div>
+          <div id="action-table"></div>
+        </article>
+      </section>
+
+      <section class="content-grid correspondence-view view-section">
+        <article class="panel span-8">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Temporal Pulse</p>
+              <h2>Correspondence Timeline</h2>
+            </div>
+          </div>
+          <div id="correspondence-pulse" class="chart-stage tall"></div>
+        </article>
+        <article class="panel span-4">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Weekly Narrative</p>
+              <h2>Latest Updates</h2>
+            </div>
+          </div>
+          <div id="weekly-narrative"></div>
+        </article>
+        <article class="panel span-12">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Feed</p>
+              <h2>Recent Correspondence</h2>
+            </div>
+          </div>
+          <div id="correspondence-table"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <aside id="detail-drawer" class="detail-drawer" hidden aria-label="Detail drilldown">
+    <div class="drawer-scrim" data-action="close-drawer"></div>
+    <section class="drawer-panel">
+      <div class="drawer-heading">
+        <div>
+          <p id="drawer-eyebrow" class="eyebrow">Detail</p>
+          <h2 id="drawer-title">Detail</h2>
+        </div>
+        <button class="icon-button" data-action="close-drawer" aria-label="Close detail panel">×</button>
+      </div>
+      <div id="drawer-body" class="drawer-body"></div>
+    </section>
+  </aside>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

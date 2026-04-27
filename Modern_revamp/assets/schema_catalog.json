@@ -1,0 +1,6120 @@
+{
+  "generated_at": "2026-04-27T20:02:05.950706+00:00",
+  "share": "configured_delta_share",
+  "schema": "public",
+  "table_count": 382,
+  "tables": [
+    "action_plan",
+    "action_plan_approver",
+    "action_plan_change_history",
+    "action_plan_completed_receiver",
+    "action_plan_custom_fields",
+    "action_plan_line_item",
+    "action_plan_line_item_assignee",
+    "action_plan_line_item_record",
+    "action_plan_line_item_record_request",
+    "action_plan_line_item_reference",
+    "actual_production_quantities",
+    "aggregate_adoption",
+    "aggregate_risk",
+    "assembly_part",
+    "assignment_custom_fields",
+    "assignments",
+    "bid",
+    "bid_form",
+    "bid_item",
+    "bid_package",
+    "bid_vendor",
+    "budget_change_adjustment_line_items",
+    "budget_change_custom_fields",
+    "budget_change_production_quantities",
+    "budget_change_workflow_responses",
+    "budget_change_workflow_steps",
+    "budget_changes",
+    "budget_code_segments",
+    "budget_codes",
+    "budget_columns",
+    "budget_forecast_line_items",
+    "budget_forecasts",
+    "budget_line_items",
+    "budget_modifications",
+    "budget_snapshot_line_item_forecasts",
+    "budget_snapshot_line_item_headers",
+    "budget_snapshot_line_items",
+    "budget_view_anticipated_cost_columns",
+    "budget_view_details",
+    "budget_view_standard_columns",
+    "budget_views",
+    "budgeted_production_quantities",
+    "change_event_custom_fields",
+    "change_event_line_item_with_markups",
+    "change_event_line_item_with_markups_relations",
+    "change_event_line_items",
+    "change_event_production_quantities",
+    "change_events",
+    "change_order_markup_line_items",
+    "commitment_change_order_line_items",
+    "commitment_change_order_markups",
+    "commitment_change_order_requests",
+    "commitment_change_order_workflow_responses",
+    "commitment_change_order_workflow_steps",
+    "commitment_change_orders",
+    "commitment_co_custom_fields",
+    "commitment_custom_fields",
+    "commitment_line_items",
+    "commitment_pco_custom_fields",
+    "commitment_pco_workflow_responses",
+    "commitment_pco_workflow_steps",
+    "commitment_potential_change_orders",
+    "commitment_workflow_response_occurrences",
+    "commitment_workflow_step_occurrences",
+    "commitments",
+    "companies",
+    "company_comments",
+    "company_distribution_groups",
+    "company_folder_documents",
+    "company_granular_permissions",
+    "company_permissions",
+    "company_project_currency_configurations",
+    "company_vendor_insurances",
+    "connected_rfi_responses",
+    "connected_rfis",
+    "contacts",
+    "contract_compliance_documents",
+    "coordination_issue",
+    "coordination_issue_custom_fields",
+    "coordination_issue_viewpoints",
+    "coordination_issue_watcher",
+    "correspondence_assignees",
+    "correspondence_custom_fields",
+    "correspondence_distributions",
+    "correspondence_response_attachments",
+    "correspondence_responses",
+    "correspondence_schedule_tasks",
+    "correspondence_types",
+    "correspondence_workflow_responses",
+    "correspondence_workflow_steps",
+    "correspondences",
+    "cost_code_lists",
+    "cost_codes",
+    "crew_memberships",
+    "daily_log_accident",
+    "daily_log_accident_custom_field_configs",
+    "daily_log_accident_custom_fields",
+    "daily_log_completion",
+    "daily_log_construction_report_attachments",
+    "daily_log_construction_report_custom_fields",
+    "daily_log_construction_reports",
+    "daily_log_delay",
+    "daily_log_delay_attachments",
+    "daily_log_delay_custom_field_configs",
+    "daily_log_delay_custom_fields",
+    "daily_log_delivery",
+    "daily_log_delivery_attachments",
+    "daily_log_delivery_custom_field_configs",
+    "daily_log_delivery_custom_fields",
+    "daily_log_dumpster",
+    "daily_log_dumpster_custom_field_configs",
+    "daily_log_dumpster_custom_fields",
+    "daily_log_equipment",
+    "daily_log_equipment_custom_fields",
+    "daily_log_inspection",
+    "daily_log_inspection_custom_fields",
+    "daily_log_manpower",
+    "daily_log_manpower_attachments",
+    "daily_log_manpower_custom_fields",
+    "daily_log_note",
+    "daily_log_note_attachments",
+    "daily_log_note_custom_field_configs",
+    "daily_log_note_custom_fields",
+    "daily_log_observed_weather_condition",
+    "daily_log_phone_call",
+    "daily_log_phone_call_custom_field_configs",
+    "daily_log_phone_call_custom_fields",
+    "daily_log_plan_revision",
+    "daily_log_plan_revision_custom_field_configs",
+    "daily_log_plan_revision_custom_fields",
+    "daily_log_productivity",
+    "daily_log_productivity_custom_field_configs",
+    "daily_log_productivity_custom_fields",
+    "daily_log_quantity",
+    "daily_log_quantity_custom_field_configs",
+    "daily_log_quantity_custom_fields",
+    "daily_log_safety_violation",
+    "daily_log_safety_violation_custom_field_configs",
+    "daily_log_safety_violation_custom_fields",
+    "daily_log_scheduled_work",
+    "daily_log_scheduled_work_custom_field_configs",
+    "daily_log_scheduled_work_custom_fields",
+    "daily_log_scheduled_work_task",
+    "daily_log_types",
+    "daily_log_visitor",
+    "daily_log_visitor_custom_field_configs",
+    "daily_log_visitor_custom_fields",
+    "daily_log_waste",
+    "daily_log_waste_custom_field_configs",
+    "daily_log_waste_custom_fields",
+    "daily_timecards_and_assignments",
+    "departments_projects",
+    "direct_cost_line_items",
+    "direct_costs",
+    "document_management",
+    "document_management_custom_fields",
+    "document_management_workflow_responses",
+    "document_management_workflow_steps",
+    "drawing_attachment",
+    "drawing_revision",
+    "drawing_revision_custom_field_configs",
+    "drawing_revision_custom_fields",
+    "early_pay_program",
+    "early_pay_program_enrollment",
+    "employees",
+    "equipment",
+    "equipment_custom_fields",
+    "equipment_project_log",
+    "equipment_telematic",
+    "equipment_telematics_daily_summary",
+    "equipment_timecard_entry",
+    "equipment_timecard_entry_custom_fields",
+    "erp_job_costs",
+    "estimate_adjustment",
+    "estimate_budget_item",
+    "estimate_budget_item_included_item",
+    "estimate_budget_item_wbs_value",
+    "estimate_layer_group_wbs_values",
+    "estimate_layer_groups",
+    "estimate_layer_wbs_values",
+    "estimate_layers",
+    "estimates",
+    "estimating_project_custom_field_configs",
+    "estimating_project_custom_fields",
+    "estimating_projects",
+    "field_productivity",
+    "folder_documents",
+    "folder_documents_custom_field_configs",
+    "folder_documents_custom_fields",
+    "folder_watchers",
+    "form",
+    "form_template",
+    "groups",
+    "incident",
+    "incident_action",
+    "incident_action_attachments",
+    "incident_action_custom_field_configs",
+    "incident_action_custom_fields",
+    "incident_alert",
+    "incident_assignee",
+    "incident_attachments",
+    "incident_custom_field_configs",
+    "incident_custom_fields",
+    "incident_distribution_member",
+    "incident_injury_body_part",
+    "incident_record",
+    "incident_record_custom_field_configs",
+    "incident_record_custom_fields",
+    "incident_witness_statement",
+    "incident_witness_statement_attachments",
+    "incident_witness_statement_custom_field_configs",
+    "incident_witness_statement_custom_fields",
+    "inspection_assignees",
+    "inspection_custom_fields",
+    "inspection_distribution_list",
+    "inspection_item_activity",
+    "inspection_item_attachments",
+    "inspection_item_comments",
+    "inspection_item_references",
+    "inspection_item_signature_requests",
+    "inspection_items",
+    "inspection_schedule_assignees",
+    "inspection_schedule_distribution_list",
+    "inspection_schedules",
+    "inspection_signature_requests",
+    "inspections",
+    "invoice_compliance",
+    "job_titles",
+    "labor_allocations",
+    "labor_equipment_productivity",
+    "locations",
+    "maintenance_record",
+    "materials",
+    "materials_purchase_order",
+    "materials_receipt",
+    "materials_shipment",
+    "meeting",
+    "meeting_attendee",
+    "meeting_item",
+    "meeting_item_assignee",
+    "monitoring_resources",
+    "observation",
+    "observation_activity",
+    "observation_assignees",
+    "observation_custom_fields",
+    "observation_distribution_member",
+    "owner_invoice_line_item_with_markups",
+    "owner_invoice_line_item_with_markups_relations",
+    "owner_invoice_line_items",
+    "owner_invoice_markup_line_items",
+    "owner_invoice_workflow_responses",
+    "owner_invoice_workflow_steps",
+    "owner_invoices",
+    "pay_requirement_settings",
+    "payments_agreements",
+    "payments_beneficiaries",
+    "payments_disbursements",
+    "payments_invites",
+    "payments_issued",
+    "payments_lien_waivers",
+    "payments_manual_holds",
+    "payments_permissions",
+    "payments_project_controls",
+    "payments_received",
+    "payments_requirements",
+    "payments_subtier_waivers",
+    "payments_subtiers",
+    "photo",
+    "prime_co_markups",
+    "prime_contract_change_order_line_items",
+    "prime_contract_change_order_requests",
+    "prime_contract_change_order_workflow_responses",
+    "prime_contract_change_order_workflow_steps",
+    "prime_contract_change_orders",
+    "prime_contract_co_custom_fields",
+    "prime_contract_custom_fields",
+    "prime_contract_line_items",
+    "prime_contract_payments",
+    "prime_contract_pco_custom_fields",
+    "prime_contract_pco_workflow_responses",
+    "prime_contract_pco_workflow_steps",
+    "prime_contract_potential_change_orders",
+    "prime_contract_workflow_responses",
+    "prime_contract_workflow_steps",
+    "prime_contracts",
+    "prime_potential_change_order_production_quantities",
+    "procore_analytics_metadata",
+    "project_company_comments",
+    "project_contacts",
+    "project_cost_codes",
+    "project_custom_field_configs",
+    "project_custom_fields",
+    "project_dates",
+    "project_distribution_groups",
+    "project_document",
+    "project_employees",
+    "project_granular_permissions",
+    "project_note",
+    "project_permissions",
+    "project_role_memberships",
+    "project_task",
+    "project_tools",
+    "project_users",
+    "project_vendor_insurances",
+    "project_vendors",
+    "projects",
+    "punch_item",
+    "punch_item_activities",
+    "punch_item_assignee",
+    "punch_item_bic",
+    "punch_item_custom_fields",
+    "punch_item_distribution_member",
+    "request_custom_fields",
+    "request_for_quote_quotes",
+    "request_for_quote_responses",
+    "request_for_quotes",
+    "requests",
+    "rfi_assignees",
+    "rfi_custom_fields",
+    "rfi_distributions",
+    "rfi_responses",
+    "rfis",
+    "rfis_bic",
+    "schedule_calendar_item",
+    "schedule_lookahead",
+    "schedule_lookahead_task",
+    "schedule_task",
+    "schedule_task_changes",
+    "schedule_task_requests",
+    "scheduling_activity",
+    "scheduling_activity_custom_fields",
+    "scheduling_relationship",
+    "scheduling_type",
+    "site_instruction_attentions",
+    "site_instruction_distribution_members",
+    "site_instructions",
+    "specification_sections",
+    "sub_jobs",
+    "subcontractor_invoice_custom_fields",
+    "subcontractor_invoice_line_items",
+    "subcontractor_invoice_line_items_relations",
+    "subcontractor_invoice_workflow_responses",
+    "subcontractor_invoice_workflow_steps",
+    "subcontractor_invoices",
+    "subcontractor_sov",
+    "submittal_approver_attachments",
+    "submittal_approvers",
+    "submittal_ball_in_courts",
+    "submittal_custom_fields",
+    "submittal_distributions",
+    "submittals",
+    "tags",
+    "task",
+    "task_activity",
+    "task_assignee",
+    "task_distribution_member",
+    "tax",
+    "tiered_segment_items",
+    "time_and_material_entries",
+    "time_and_material_entry_custom_fields",
+    "time_and_material_equipment_custom_fields",
+    "time_and_material_equipments",
+    "time_and_material_labors",
+    "time_and_material_labors_custom_fields",
+    "time_and_material_material_custom_fields",
+    "time_and_material_materials",
+    "time_and_material_subcontractor_custom_fields",
+    "time_and_material_subcontractors",
+    "time_off",
+    "timecard_entries",
+    "timecard_entry_custom_fields",
+    "user_activity",
+    "users",
+    "vendors",
+    "wbs_codes",
+    "wp_people",
+    "wp_people_custom_fields",
+    "wp_person_groups_relations",
+    "wp_project_custom_fields",
+    "wp_projects",
+    "wp_roles",
+    "wp_wage_overrides"
+  ],
+  "key_table_schemas": {
+    "budget_view_standard_columns": [
+      {
+        "name": "approved_budget_changes_amount_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "approved_co_amount_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_modifications",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_unit_cost",
+        "type": "decimal(22,4)",
+        "nullable": true
+      },
+      {
+        "name": "budget_unit_quantity",
+        "type": "decimal(30,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_uom",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "committed_costs_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "direct_cost_total_amount_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_at_completion",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_aggregate_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_automatic_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_manual_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "job_to_date_costs_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "original_budget_amount",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "pending_co_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "pending_cost_changes_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "projected_budget_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "projected_costs_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "projected_over_under_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "revised_budget_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_sum",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "wbs_code_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "budget_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "budget_code_description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "approved_budget_changes_amount_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "approved_budget_changes_amount_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "approved_co_amount_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "approved_co_amount_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "budget_modifications_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "budget_modifications_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "committed_costs_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "committed_costs_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "direct_cost_total_amount_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "direct_cost_total_amount_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_at_completion_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_at_completion_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_aggregate_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_aggregate_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_automatic_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_automatic_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_manual_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "forecast_to_complete_manual_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "job_to_date_costs_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "job_to_date_costs_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "original_budget_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "original_budget_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_co_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_co_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_cost_changes_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_cost_changes_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_budget_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_budget_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_costs_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_costs_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_over_under_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "projected_over_under_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "revised_budget_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "revised_budget_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_sum_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_sum_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      }
+    ],
+    "change_event_line_item_with_markups": [
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "biller_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "biller_model_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "biller_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "budget_days_in_stage",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "budget_rom",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_rom_company_currency",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_rom_project_currency",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "budget_stage",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "budget_stage_in_status_since",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "budget_stage_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "change_event_events_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "change_event_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "change_event_line_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "change_event_line_item_with_markup_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "change_event_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "change_event_title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "commitment_line_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "commitment_potential_change_order_line_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contract_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contract_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contract_title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_days_in_stage",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom",
+        "type": "decimal(22,2)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_quantity",
+        "type": "decimal(32,12)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_unit_cost",
+        "type": "decimal(24,4)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_unit_cost_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "cost_rom_unit_cost_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "cost_stage",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_stage_in_status_since",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "cost_stage_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "currency_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "estimated_budget_amount",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_budget_transfer_amount",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_amount",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_cost_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_revenue_calculation_strategy",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "event_scope",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "import_origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "latest_cost",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "latest_cost_amount",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "latest_cost_amount_company_currency",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "latest_cost_amount_project_currency",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "latest_price",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "latest_price_amount",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "latest_price_amount_company_currency",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "latest_price_amount_project_currency",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "line_aging",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "line_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_commitment_contract_cost",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_commitment_pco_cost",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_contract",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_edit",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_prime_pco_cost",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_rfq_amount",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_rom",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "links_view",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "non_committed_cost",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "non_committed_cost_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "non_committed_cost_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "prime_potential_change_order_line_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "proposed_contract_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "proposed_vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "proposed_vendor_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "request_for_quote_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "revenue_days_in_stage",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_company_currency",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_project_currency",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_quantity",
+        "type": "decimal(32,12)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_unit_cost",
+        "type": "decimal(24,4)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_unit_cost_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_rom_unit_cost_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "revenue_stage",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "revenue_stage_in_status_since",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "revenue_stage_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "source",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "unit_of_measure",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "vendor_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "wbs_code_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "commitments": [
+      {
+        "name": "accounting_method",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "actual_completion_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "allow_these_users_to_see_sov_items",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "approval_letter_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "approved_change_orders",
+        "type": "decimal(30,2)",
+        "nullable": true
+      },
+      {
+        "name": "approved_change_orders_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "approved_change_orders_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "approved_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "assignee_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "assignee_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "bid_form_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "bid_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "bid_package_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "bid_vendor_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "bill_to_address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "change_order_level_of_detail",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "comments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "commitment_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "commitment_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contract_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "contract_estimated_completion_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "contract_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contract_user_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contractor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "currency_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_fields",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "default_retainage",
+        "type": "decimal(6,2)",
+        "nullable": true
+      },
+      {
+        "name": "deleted_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "delivery_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_role",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signer_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "draft_change_orders",
+        "type": "decimal(30,2)",
+        "nullable": true
+      },
+      {
+        "name": "draft_change_orders_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "draft_change_orders_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "enable_comments",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_completed_work_retainage",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_financial_markups",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_payments",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_payments_applications",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_sliding_scale_retention",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_stored_material_retainage",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "enable_subcontractor_schedule_of_values",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "erp_latest_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "erp_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "erp_user_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "exclusions",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "executed",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "execution_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "financial_object_to_project_exchange_rate",
+        "type": "decimal(32,6)",
+        "nullable": true
+      },
+      {
+        "name": "global_insurance_compliance",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "grand_total",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "grand_total_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "grand_total_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "import_origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "inclusions",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "invoice_contacts_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "invoiced",
+        "type": "decimal(22,2)",
+        "nullable": true
+      },
+      {
+        "name": "invoiced_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "invoiced_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "issued_on_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "letter_of_intent_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "line_items_extended_total",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "line_items_extended_total_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "line_items_extended_total_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "line_items_total",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "line_items_total_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "line_items_total_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "origin_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payment_terms",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payments_beneficiary_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "pending_change_orders",
+        "type": "decimal(30,2)",
+        "nullable": true
+      },
+      {
+        "name": "pending_change_orders_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_change_orders_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_revised_contract_amount",
+        "type": "decimal(33,2)",
+        "nullable": true
+      },
+      {
+        "name": "pending_revised_contract_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "pending_revised_contract_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "percentage_paid",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_insurance_compliance",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "remaining_balance",
+        "type": "decimal(32,2)",
+        "nullable": true
+      },
+      {
+        "name": "remaining_balance_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "remaining_balance_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "returned_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "revised_contract_amount",
+        "type": "decimal(31,2)",
+        "nullable": true
+      },
+      {
+        "name": "revised_contract_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "revised_contract_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "ship_to_address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "ship_via",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "show_cost_code_on_pdf",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "signature_required",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "signed_contract_received_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "start_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_schedule_of_values_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "synced_with_accounting",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "total_payments",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_payments_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_payments_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "workflow_distribution_member_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "workflow_role_user_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "percentage_paid_company_currency",
+        "type": "decimal(38,6)",
+        "nullable": true
+      },
+      {
+        "name": "percentage_paid_project_currency",
+        "type": "decimal(38,6)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_estimated_tax",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_estimated_tax_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_estimated_tax_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      }
+    ],
+    "correspondence_custom_fields": [
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_custom_field_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_data_type",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_definitions_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "type_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "correspondence_response_attachments": [
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "content_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_response_attachment_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_response_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "filename",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "viewable_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "type_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "correspondences": [
+      {
+        "name": "allow_admin_view_private_item",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "assignees",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "closed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "correspondence_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_code_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact_value",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distributions",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_role",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signer_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "issued_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_subject",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_rfi_header_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "origin_tool",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "quantity",
+        "type": "decimal(30,12)",
+        "nullable": true
+      },
+      {
+        "name": "received_from",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "received_from_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "schedule_impact",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_impact_value",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sub_job",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sub_job_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "subject",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "trade",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "type_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "unit_of_measure",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "origin_correspondence_type_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "generic_tool_item_task_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "composite_provider_key",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_member_id_list",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "daily_log_construction_report_attachments": [
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "content_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "daily_log_construction_report_attachment_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "daily_log_construction_report_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "filename",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "viewable_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "daily_log_manpower_attachments": [
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "content_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "daily_log_manpower_attachment_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "daily_log_manpower_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "filename",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "viewable_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "incident": [
+      {
+        "name": "actions_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "closed_observation_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contributing_behavior",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contributing_condition",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contribution_behavior_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contribution_condition_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "details_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "distribution_members",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "event_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "event_time",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "hazard",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "hazard_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "incident_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "incident_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "number",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "open_observation_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "recordable",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "time_unknown",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "witness_statements_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_member_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "recipient_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "global_status",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "incident_attachments": [
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "content_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "filename",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "incident_attachment_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "incident_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "viewable_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "observation": [
+      {
+        "name": "assignee_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "assignee_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_vendor_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "category",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "checklist_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "closed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contributing_behavior_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contributing_behavior_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contributing_condition_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contributing_condition_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "coordination_issue_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "notified_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_members",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "hazard_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "hazard_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "incident_action_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "initially_responded_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "inspection_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "inspection_item_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "observation_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "observation_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_tool",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "origin_title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "overdue",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "personal",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "priority",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "sent",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "trade_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "trade_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "type_category",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "type_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "type_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "incident_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_company",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "group",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_member_ids",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_user_id_list",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "payments_issued": [
+      {
+        "name": "amount",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "check_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contract_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "currency_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "date_payment_funded",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "disbursement_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "draw_request_number",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_amount",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_payment_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "financial_object_to_project_exchange_rate",
+        "type": "decimal(32,6)",
+        "nullable": true
+      },
+      {
+        "name": "invoice_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "invoice_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "legacy_amount_in_cents",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "paid_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "paid_on",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "payment_application_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "payment_method",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payment_notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payment_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payment_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payments_issued_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "procore_pay_transaction_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "synced_with_accounting",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "photo": [
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "comments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "daily_log_completion_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "exposure_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "gps_lat",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "gps_long",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "height",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "image_category_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "image_category_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "origin_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "origin_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "photo_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "photo_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "prostore_file_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "provider_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "starred",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "trade_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "uploaded_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "uploaded_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "uploaded_by_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "width",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "projects": [
+      {
+        "name": "accounting_project_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "actual_start_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "bid_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "city",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "country_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "country_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "county",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "default_tax_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "departments",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "designated_market_area",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "display_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "erp_latest_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "erp_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "erp_user_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "estimated_completion_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "estimated_start_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "fax",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "flag",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "inbound_email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "is_demo",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "latitude",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "locale",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "longitude",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "office_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "owner_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "parent_job_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "parent_job_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "program_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "projected_finish_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "square_feet",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "stage_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "stage_tier",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "state_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "synced_with_accounting",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "timezone",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "total_value",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "warranty_end_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "warranty_start_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "zip",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "currency_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "pg_time_zone",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "predicted_demo_project",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "predicted_demo_project_reason",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_to_company_exchange_rate",
+        "type": "decimal(38,6)",
+        "nullable": true
+      },
+      {
+        "name": "total_value_company_currency",
+        "type": "decimal(28,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_value_project_currency",
+        "type": "decimal(21,2)",
+        "nullable": true
+      },
+      {
+        "name": "origin_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "delivery_method",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sector",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "work_scope",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_last_updated",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "schedule_percent_completion",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "utc_offset",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "actual_completion_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "budget_lock_status",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "store_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "estimated_budget",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_budget_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "estimated_budget_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "priority",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "rfi_assignees": [
+      {
+        "name": "assignee_company_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "login_information_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "rfi_assignee_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_header_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "forwarded_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "rfi_custom_fields": [
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_data_type",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_definitions_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_custom_field_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "rfi_responses": [
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "official",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "response",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_header_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_question_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_response_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "is_most_recent",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_member_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_created_by_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_draft",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_hidden",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_manager_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_private",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_project_id",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "rfis": [
+      {
+        "name": "accepted",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "assignees",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "ball_in_court",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "cost_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_code_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact_value",
+        "type": "decimal(38,12)",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "discussion_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "draft",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "drawing_number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "due_date_variance",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "hidden",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "initiated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "is_active",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "location_created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "location_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "location_node_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "location_parent_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "location_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "overdue",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "position",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "predicted_outlier",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "predicted_outlier_reason",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "predicted_primary_assignee_company",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "predicted_primary_assignee_last_official_response_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "predicted_primary_assignee_last_response_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "predicted_primary_assignee_response_days",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "predicted_test_rfi",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "prefix",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "priority",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_stage_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "proposed_solution",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "question",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "question_created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "received_from",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "received_from_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "received_from_login_information_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "reference",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "responsible_contractor",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "responsible_contractor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_header_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_manager",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_manager_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rfi_manager_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "rfi_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_impact",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_impact_value",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "stage",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "stg_rfi_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "sub_job",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sub_job_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "subject",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "time_resolved",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact_value_company_currency",
+        "type": "decimal(35,2)",
+        "nullable": true
+      },
+      {
+        "name": "cost_impact_value_project_currency",
+        "type": "decimal(29,2)",
+        "nullable": true
+      },
+      {
+        "name": "predicted_topic",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_timeline_percentage",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "current_revision",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "revision",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "assignee_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_member_id_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "attachment_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "company_name",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "schedule_task": [
+      {
+        "name": "activity_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "actual_finish_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "actual_start_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "baseline_finish_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "baseline_start_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_login",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "critical_path",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "finish_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "finish_variance",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "full_outline_path",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "has_children",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "is_subtask",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "milestone",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "notes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "parent_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "parent_task_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "percentage",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "resource_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "row_number",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "schedule_attributes",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_duration",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "schedule_task_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "schedule_task_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "source_uid",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "start_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "start_variance",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "wbs",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "task_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "predecessor_wbs_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "successor_wbs_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      }
+    ],
+    "scheduling_activity": [
+      {
+        "name": "activity_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "calendar_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "calendar_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "category_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "constraint_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "constraint_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "crew_size",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "deadline_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "deadline_variance",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "display_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "duration",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "duration_display_unit",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "duration_unit",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "finish_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "is_actual_finish",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "is_actual_start",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "is_critical",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "is_placeholder",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "note",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "parent_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "percent_done",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "resource_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_activity_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "sibling_position",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "start_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "total_float",
+        "type": "double",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "updated_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "vendor_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "activity_id",
+        "type": "long",
+        "nullable": true
+      }
+    ],
+    "subcontractor_invoices": [
+      {
+        "name": "architect",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "balance_to_finish",
+        "type": "decimal(23,2)",
+        "nullable": true
+      },
+      {
+        "name": "balance_to_finish_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "balance_to_finish_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "billing_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "billing_period_end_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "billing_period_start_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "billing_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "completed_work_retainage_amount",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "completed_work_retainage_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "completed_work_retainage_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "contract_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "contract_sum_to_date",
+        "type": "decimal(21,2)",
+        "nullable": true
+      },
+      {
+        "name": "contract_sum_to_date_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "contract_sum_to_date_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "contract_title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "contract_type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "currency_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "current_payment_due",
+        "type": "decimal(23,2)",
+        "nullable": true
+      },
+      {
+        "name": "current_payment_due_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "current_payment_due_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "date_submitted",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_email",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_role",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_ball_in_court_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "docusign_signer_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "docusign_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "docusign_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_amount",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_amount_calculated",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_fee_rate",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "early_pay_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "erp_latest_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "erp_updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "erp_user_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_data",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "external_origin_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "financial_object_to_project_exchange_rate",
+        "type": "decimal(32,6)",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount",
+        "type": "decimal(21,2)",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "invoice_end_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "invoice_start_date",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "last",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "less_certificates_for_payment",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "less_certificates_for_payment_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "less_certificates_for_payment_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "missed_payment_due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "net_amount",
+        "type": "decimal(23,2)",
+        "nullable": true
+      },
+      {
+        "name": "net_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_change_by_change_orders",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "net_change_by_change_orders_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_change_by_change_orders_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "original_payment_due",
+        "type": "decimal(23,2)",
+        "nullable": true
+      },
+      {
+        "name": "original_payment_due_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "original_payment_due_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "overall_comments",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "paid_amount",
+        "type": "decimal(30,2)",
+        "nullable": true
+      },
+      {
+        "name": "paid_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "paid_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "payment_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "payment_due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "payment_status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "percent_complete",
+        "type": "decimal(38,14)",
+        "nullable": true
+      },
+      {
+        "name": "period_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "position",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "rejected_message",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "retainage_materials_presently_stored",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_materials_presently_stored_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_materials_presently_stored_percent",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_materials_presently_stored_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_work_completed_to_date",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_work_completed_to_date_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_work_completed_to_date_percent",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "retainage_work_completed_to_date_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "subcontractor_invoice_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "synced_with_accounting",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_additions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_additions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_additions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_deductions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_deductions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_deductions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_additions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_additions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_additions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_deductions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_deductions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_in_previous_months_by_owner_client_deductions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_additions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_additions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_additions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_deductions",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_deductions_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_changes_approved_this_month_deductions_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_completed_and_stored_to_date",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_completed_and_stored_to_date_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_completed_and_stored_to_date_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_contract_amount",
+        "type": "decimal(21,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_contract_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_contract_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_earned_less_retainage",
+        "type": "decimal(22,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_earned_less_retainage_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_earned_less_retainage_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_payments_amount",
+        "type": "decimal(30,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_payments_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_payments_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_proposed_amount",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_proposed_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_proposed_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_retainage",
+        "type": "decimal(21,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_retainage_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_retainage_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_tax",
+        "type": "decimal(20,2)",
+        "nullable": true
+      },
+      {
+        "name": "total_tax_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "total_tax_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "vendor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount_plus_tax",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount_plus_tax_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "gross_amount_plus_tax_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_amount_plus_tax",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_amount_plus_tax_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "net_amount_plus_tax_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "tax_total",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "tax_total_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "tax_total_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount_company_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "taxable_amount_project_currency",
+        "type": "decimal(38,5)",
+        "nullable": true
+      },
+      {
+        "name": "payments_beneficiary_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "payments_project_control_id",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "submittal_approvers": [
+      {
+        "name": "comments",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "company_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "days_to_respond",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "login_information_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "overdue",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "predicted_outlier",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "predicted_outlier_reason",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "response",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "response_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "response_required",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "returned_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sent_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "step",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submittal_approver_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submittal_log_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "remaining_calendar_days",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "remaining_working_days",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "is_last_step",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "previous_due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "previous_returned_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "previous_sent_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "submittal_approver_attachment_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "variance_at_end",
+        "type": "integer",
+        "nullable": true
+      }
+    ],
+    "submittal_custom_fields": [
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_data_type",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_definitions_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "custom_field_value_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submittal_log_custom_field_id",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "submittal_log_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "submittals": [
+      {
+        "name": "actual_delivery_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "anticipated_delivery_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "approvers",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "attachments_count",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "ball_in_court",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "company_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "confirmed_delivery_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "cost_code",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "cost_code_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "created_by_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "created_by_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "current_revision",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "design_team_review_time",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "distributed_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "distribution_list",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "final_due_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "internal_review_time",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "issue_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "lead_time",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "location_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "overdue",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "package",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "planned_internal_review_completed_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "planned_return_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "planned_submit_by_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "private",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "project_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "received_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "received_from",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "received_from_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "required_on_site_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "responsible_contractor",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "responsible_contractor_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "revision",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "specification_section_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sub_job",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sub_job_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submit_by_date",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "submittal_log_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submittal_manager",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "submittal_manager_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "submittal_resource_url",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "submittal_status_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "updated_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "status_category",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "schedule_task_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "ball_in_court_role",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "paused",
+        "type": "boolean",
+        "nullable": true
+      },
+      {
+        "name": "audit_transaction_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "closed_at",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "refreshed_timestamp",
+        "type": "timestamp",
+        "nullable": true
+      },
+      {
+        "name": "source_checksum",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "anticipated_delivery_date_at_close",
+        "type": "date",
+        "nullable": true
+      },
+      {
+        "name": "remaining_buffer_time_at_close",
+        "type": "integer",
+        "nullable": true
+      },
+      {
+        "name": "workflow_progress_at_close",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "source_submittal_id",
+        "type": "long",
+        "nullable": true
+      },
+      {
+        "name": "specification_area_name",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "approvers_ids",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "distribution_id_list",
+        "type": "string",
+        "nullable": true
+      }
+    ]
+  }
+}
