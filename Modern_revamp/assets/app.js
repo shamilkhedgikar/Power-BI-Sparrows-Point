@@ -11,6 +11,7 @@
     gray: "#8a98a5",
     line: "#d7dddc"
   };
+  const PROCORE_WEB_HOST = "https://us02.procore.com";
 
   const projects = DATA.projects || [];
   const allProjectIds = projects.map((project) => project.project_id);
@@ -445,7 +446,7 @@
     }
     target.innerHTML = rows.map((row) => {
       const link = row.open_url
-        ? `<a href="${escapeAttribute(row.open_url)}" target="_blank" rel="noreferrer">Open source record</a>`
+        ? `<a href="${escapeAttribute(sourceUrl(row.open_url))}" target="_blank" rel="noreferrer">Open source record</a>`
         : `<span class="kpi-note">No direct image URL exposed in the shared table.</span>`;
       return `
         <article class="source-media-card">
@@ -914,8 +915,10 @@
   function sourceUrl(value) {
     const text = String(value || "");
     if (!text) return "";
-    if (/^https?:\/\//i.test(text)) return text;
-    return `https://app.procore.com${text.startsWith("/") ? "" : "/"}${text}`;
+    if (/^https?:\/\//i.test(text)) {
+      return text.replace(/^https:\/\/app\.procore\.com/i, PROCORE_WEB_HOST);
+    }
+    return `${PROCORE_WEB_HOST}${text.startsWith("/") ? "" : "/"}${text}`;
   }
 
   function sameId(left, right) {
