@@ -123,8 +123,17 @@
               <p class="eyebrow">Program Schedule</p>
               <h2>Milestone Gantt</h2>
             </div>
+            <label class="chart-frequency-control">
+              <span>Frequency</span>
+              <select data-gantt-frequency="project">
+                <option value="week">Weekly</option>
+                <option value="fortnight" selected>Fortnight</option>
+                <option value="month">Monthly</option>
+                <option value="quarter">3 months</option>
+              </select>
+            </label>
           </div>
-          <div id="project-gantt" class="chart-stage"></div>
+          <div id="project-gantt" class="chart-stage timeline-chart"></div>
         </article>
 
         <article class="panel span-12">
@@ -206,8 +215,17 @@
               <p class="eyebrow">Executive Actions</p>
               <h2>Wins, Decisions, Risks, Actions Timeline</h2>
             </div>
+            <label class="chart-frequency-control">
+              <span>Frequency</span>
+              <select data-gantt-frequency="risk">
+                <option value="week">Weekly</option>
+                <option value="fortnight" selected>Fortnight</option>
+                <option value="month">Monthly</option>
+                <option value="quarter">3 months</option>
+              </select>
+            </label>
           </div>
-          <div id="risk-gantt" class="chart-stage xlarge"></div>
+          <div id="risk-gantt" class="chart-stage xlarge timeline-chart"></div>
         </article>
         <article class="panel span-4">
           <div class="panel-heading">
@@ -225,12 +243,13 @@
               <h2>Action Register</h2>
             </div>
           </div>
+          <div id="action-register-filters" class="register-filters"></div>
           <div id="action-table"></div>
         </article>
       </section>
 
       <section class="content-grid correspondence-view view-section">
-        <article class="panel span-8">
+        <article class="panel span-12">
           <div class="panel-heading">
             <div>
               <p class="eyebrow">Temporal Pulse</p>
@@ -239,7 +258,7 @@
           </div>
           <div id="correspondence-pulse" class="chart-stage tall"></div>
         </article>
-        <article class="panel span-4">
+        <article class="panel span-12">
           <div class="panel-heading">
             <div>
               <p class="eyebrow">Weekly Narrative</p>

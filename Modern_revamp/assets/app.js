@@ -21,7 +21,15 @@
     dateEnd: toInputDate(DATA.meta && DATA.meta.date_max) || "2026-12-31",
     view: "overview",
     selectionMode: "multi",
-    portfolioMode: "all"
+    portfolioMode: "all",
+    actionSearch: "",
+    actionType: "",
+    actionDateStart: "",
+    actionDateEnd: "",
+    ganttFrequency: {
+      project: "fortnight",
+      risk: "fortnight"
+    }
   };
 
   const tooltip = document.getElementById("tooltip");
@@ -40,8 +48,16 @@
       const viewButton = event.target.closest("[data-view]");
       const projectChip = event.target.closest("[data-select-project-id]");
       const drill = event.target.closest("[data-drill]");
+      const riskMix = event.target.closest("[data-risk-mix-type]");
       if (projectChip) handleProjectSelection(Number(projectChip.dataset.selectProjectId));
       if (drill) openDetail(drill.dataset.drill, Number(drill.dataset.projectId || state.inspectedId));
+      if (riskMix) {
+        const value = riskMix.dataset.riskMixType || "";
+        state.actionType = state.actionType === value ? "" : value;
+        renderRiskMix();
+        renderActionRegisterFilters();
+        renderActionRegisterBody();
+      }
       if (viewButton) {
         state.view = viewButton.dataset.view;
         renderAll();
@@ -67,6 +83,32 @@
     document.getElementById("date-end").addEventListener("change", (event) => {
       state.dateEnd = event.target.value;
       renderAll();
+    });
+    document.addEventListener("input", (event) => {
+      if (event.target.id === "action-search") {
+        state.actionSearch = event.target.value;
+        renderActionRegisterBody();
+      }
+    });
+    document.addEventListener("change", (event) => {
+      const ganttFrequency = event.target.closest("[data-gantt-frequency]");
+      if (ganttFrequency) {
+        state.ganttFrequency[ganttFrequency.dataset.ganttFrequency] = ganttFrequency.value;
+        renderAll();
+        return;
+      }
+      if (event.target.id === "action-type-filter") {
+        state.actionType = event.target.value;
+        renderActionRegisterBody();
+      }
+      if (event.target.id === "action-date-start") {
+        state.actionDateStart = event.target.value;
+        renderActionRegisterBody();
+      }
+      if (event.target.id === "action-date-end") {
+        state.actionDateEnd = event.target.value;
+        renderActionRegisterBody();
+      }
     });
   }
 
@@ -207,6 +249,7 @@
     const hse = rowsFor("hse");
     return {
       approvedBudget: sum(financials, "approved_budget"),
+      ownerContingency: sum(financials, "owner_contingency"),
       commitments: sum(financials, "commitment_value"),
       invoiced: sum(financials, "invoiced_to_date"),
       unpaid: sum(financials, "unpaid_amount"),
@@ -273,7 +316,7 @@
     const selected = selectedProjects();
     const t = totals();
     document.getElementById("portfolio-summary").textContent =
-      `${selected.length} selected projects. ${fmtMoney(t.approvedBudget)} approved budget, ${fmtMoney(t.commitments)} committed, ${fmtMoney(t.invoiced)} invoiced to date. ${t.openRfis + t.openSubmittals} open control items and ${t.actionItems} executive action records in the selected window.`;
+      `${selected.length} selected projects. ${fmtMoney(t.approvedBudget)} approved budget, ${fmtMoney(t.ownerContingency)} owner contingency, ${fmtMoney(t.commitments)} committed, ${fmtMoney(t.invoiced)} invoiced to date. ${t.openRfis + t.openSubmittals} open control items and ${t.actionItems} executive action records in the selected window.`;
   }
 
   function renderKpis() {
@@ -282,6 +325,7 @@
     const exposure = t.openRfis + t.openSubmittals + t.actionItems;
     const cards = [
       ["Approved Budget", fmtMoney(t.approvedBudget), `${fmtPct(burn)} invoiced against approved budget`],
+      ["Owner Contingency", fmtMoney(t.ownerContingency), `${fmtPct(t.approvedBudget ? t.ownerContingency / t.approvedBudget : 0)} of approved budget`],
       ["Commitments", fmtMoney(t.commitments), `${fmtPct(t.approvedBudget ? t.commitments / t.approvedBudget : 0)} of approved budget`],
       ["Open Controls", fmtNumber(t.openRfis + t.openSubmittals), `${t.overdueRfis + t.overdueSubmittals} overdue RFIs/submittals`],
       ["Executive Actions", fmtNumber(t.actionItems), `${selectedCorrespondence().length} correspondence records in window`],
@@ -301,6 +345,7 @@
     const rows = rowsFor("financials").filter((row) => getProject(row.project_id));
     const series = [
       { key: "approved_budget", label: "Approved", color: COLORS.navy },
+      { key: "owner_contingency", label: "Owner Cont.", color: COLORS.blue },
       { key: "commitment_value", label: "Committed", color: COLORS.teal },
       { key: "invoiced_to_date", label: "Invoiced", color: COLORS.gold }
     ];
@@ -311,6 +356,7 @@
     const rows = rowsFor("financials").filter((row) => getProject(row.project_id));
     const series = [
       { key: "approved_budget", label: "Budget", color: COLORS.navy },
+      { key: "owner_contingency", label: "Owner Cont.", color: COLORS.blue },
       { key: "commitment_value", label: "Commit", color: COLORS.teal },
       { key: "invoiced_to_date", label: "Invoice", color: COLORS.gold },
       { key: "unpaid_amount", label: "Unpaid", color: COLORS.red }
@@ -322,12 +368,13 @@
     const rows = rowsFor("financials")
       .filter((row) => getProject(row.project_id))
       .sort((a, b) => num(b.approved_budget) - num(a.approved_budget));
-    renderTable("financial-table", ["Project", "Budget", "Committed", "Invoiced"], rows.map((row) => [
+    renderTable("financial-table", ["Project", "Budget", "Owner Cont.", "Committed", "Invoiced"], rows.map((row) => [
       shortProjectName(getProject(row.project_id)),
       fmtMoney(row.approved_budget),
+      `${fmtMoney(row.owner_contingency)}${row.owner_contingency_code ? `<br><span class="code-note">${escapeHtml(row.owner_contingency_code)}</span>` : ""}`,
       fmtMoney(row.commitment_value),
       fmtMoney(row.invoiced_to_date)
-    ]));
+    ]), true);
   }
 
   function renderControlDonuts() {
@@ -371,7 +418,8 @@
       color: projectColor(projects.indexOf(project)),
       detail: project.project_stage_name || ""
     }));
-    drawGantt("project-gantt", rows, { fallbackDays: 210 });
+    syncGanttFrequencyControl("project");
+    drawGantt("project-gantt", rows, { fallbackDays: 210, frequency: state.ganttFrequency.project });
   }
 
   function renderControlsCharts() {
@@ -443,26 +491,105 @@
       document.getElementById("risk-gantt").innerHTML = `<div class="empty-state">No executive action records matched the selected filters.</div>`;
       return;
     }
-    drawGantt("risk-gantt", rows.slice(0, 26), { fallbackDays: 14 });
+    syncGanttFrequencyControl("risk");
+    drawGantt("risk-gantt", rows.slice(0, 26), { fallbackDays: 14, frequency: state.ganttFrequency.risk });
   }
 
   function renderRiskMix() {
-    const counts = selectedActions().reduce((acc, item) => {
-      acc[item.risk_class || "action"] = (acc[item.risk_class || "action"] || 0) + 1;
+    const buckets = selectedActions().reduce((acc, item) => {
+      const label = actionTypeLabel(item);
+      if (!acc[label]) acc[label] = { value: 0, color: riskColor(item.risk_class) };
+      acc[label].value += 1;
       return acc;
     }, {});
-    const rows = Object.entries(counts).map(([key, value]) => ({ label: key, value, color: riskColor(key) }));
+    const rows = Object.entries(buckets).map(([key, bucket]) => ({
+      label: key,
+      value: bucket.value,
+      color: bucket.color,
+      active: state.actionType === key
+    }));
     drawDonutChart("risk-mix", rows);
   }
 
   function renderActionTable() {
-    const rows = selectedActions().slice(0, 20).map((item) => [
+    renderActionRegisterFilters();
+    renderActionRegisterBody();
+  }
+
+  function renderActionRegisterBody() {
+    const filtered = filteredActionRegisterActions();
+    const rows = filtered.slice(0, 40).map((item) => [
       escapeHtml(shortProjectName(getProject(item.project_id))),
       escapeHtml(item.subject),
       `<span class="pill ${escapeAttribute(item.risk_class)}">${escapeHtml(item.category || item.risk_class)}</span>`,
       escapeHtml(formatDate(item.start))
     ]);
     renderTable("action-table", ["Project", "Item", "Type", "Date"], rows, true);
+  }
+
+  function renderActionRegisterFilters() {
+    const target = document.getElementById("action-register-filters");
+    if (!target) return;
+    const types = uniqueValues(selectedActions().map(actionTypeLabel).filter(Boolean));
+    const typeOptions = [
+      `<option value="">All types</option>`,
+      ...types.map((type) => `<option value="${escapeAttribute(type)}" ${state.actionType === type ? "selected" : ""}>${escapeHtml(type)}</option>`)
+    ].join("");
+    target.innerHTML = `
+      <label class="register-filter-field wide">
+        <span>Name or project</span>
+        <input id="action-search" type="search" value="${escapeAttribute(state.actionSearch)}" placeholder="Filter action register">
+      </label>
+      <label class="register-filter-field">
+        <span>Type</span>
+        <select id="action-type-filter">${typeOptions}</select>
+      </label>
+      <label class="register-filter-field">
+        <span>From</span>
+        <input id="action-date-start" type="date" value="${escapeAttribute(state.actionDateStart)}">
+      </label>
+      <label class="register-filter-field">
+        <span>To</span>
+        <input id="action-date-end" type="date" value="${escapeAttribute(state.actionDateEnd)}">
+      </label>
+    `;
+  }
+
+  function filteredActionRegisterActions() {
+    const search = cleanText(state.actionSearch).toLowerCase();
+    const type = state.actionType;
+    const start = parseDate(state.actionDateStart);
+    const end = parseDate(state.actionDateEnd);
+    return selectedActions().filter((item) => {
+      const project = getProject(item.project_id);
+      const itemType = actionTypeLabel(item);
+      if (type && itemType !== type) return false;
+      if (search) {
+        const haystack = [
+          item.subject,
+          item.description,
+          item.category,
+          item.priority,
+          shortProjectName(project),
+          project && project.project_display_name
+        ].map(cleanText).join(" ").toLowerCase();
+        if (!haystack.includes(search)) return false;
+      }
+      if (start || end) {
+        const itemStart = parseDate(item.start);
+        const itemEnd = parseDate(item.end) || itemStart;
+        if (!itemStart && !itemEnd) return false;
+        const left = itemStart || itemEnd;
+        const right = itemEnd || itemStart;
+        if (start && right < start) return false;
+        if (end && left > end) return false;
+      }
+      return true;
+    });
+  }
+
+  function actionTypeLabel(item) {
+    return cleanText(item.category || item.risk_class || "Action");
   }
 
   function renderCorrespondencePulse() {
@@ -657,11 +784,33 @@
           <div class="kpi-note">Committed vs Approved Budget</div>
           <div class="progress-track"><span style="width:${Math.min(100, committedRatio * 100)}%"></span></div>
         </div>
-        <div class="metric-list">
-          <div class="metric-row"><span>Approved Budget</span><strong>${fmtMoney(financial.approved_budget)}</strong><span></span><span></span></div>
-          <div class="metric-row"><span>Invoiced</span><strong>${fmtMoney(financial.invoiced_to_date)}</strong><span></span><span></span></div>
-          <div class="metric-row"><span>Open RFIs</span><strong>${fmtNumber(rfi.open_rfis)}</strong><span>Overdue</span><strong>${fmtNumber(rfi.overdue_rfis)}</strong></div>
-          <div class="metric-row"><span>Open Submittals</span><strong>${fmtNumber(sub.open_submittals)}</strong><span>Overdue</span><strong>${fmtNumber(sub.overdue_submittals)}</strong></div>
+        <div class="inspector-metrics">
+          <div class="inspector-metric">
+            <span>Approved Budget</span>
+            <strong>${fmtMoney(financial.approved_budget)}</strong>
+          </div>
+          <div class="inspector-metric stacked">
+            <span>Owner Contingency</span>
+            <strong>${fmtMoney(financial.owner_contingency)}</strong>
+            ${financial.owner_contingency_code ? `<small>${escapeHtml(financial.owner_contingency_code)}</small>` : ""}
+            ${financial.owner_contingency_description ? `<em>${escapeHtml(financial.owner_contingency_description)}</em>` : ""}
+          </div>
+          <div class="inspector-metric">
+            <span>Invoiced</span>
+            <strong>${fmtMoney(financial.invoiced_to_date)}</strong>
+          </div>
+          <div class="inspector-split-metric">
+            <span>Open RFIs</span>
+            <strong>${fmtNumber(rfi.open_rfis)}</strong>
+            <span>Overdue</span>
+            <strong>${fmtNumber(rfi.overdue_rfis)}</strong>
+          </div>
+          <div class="inspector-split-metric">
+            <span>Open Submittals</span>
+            <strong>${fmtNumber(sub.open_submittals)}</strong>
+            <span>Overdue</span>
+            <strong>${fmtNumber(sub.overdue_submittals)}</strong>
+          </div>
         </div>
       </div>
     `;
@@ -824,7 +973,14 @@
         const drillAttrs = options.drill ? ` data-drill="${escapeAttribute(options.drill)}" data-project-id="${row.project_id || ""}"` : "";
         const tooltipText = `${options.label(row)} | ${s.label}: ${valueFormat(value)}`;
         html += `<rect class="${options.drill ? "clickable" : ""}"${drillAttrs} data-tooltip="${escapeAttribute(tooltipText)}" x="0" y="${by}" width="${barW}" height="${barH}" rx="4" fill="${s.color}"></rect>`;
-        html += `<text class="chart-value-label" x="${barW + 8}" y="${by + barH - 4}">${escapeSvg(valueFormat(value))}</text>`;
+        if (value > 0) {
+          const label = valueFormat(value);
+          const estimatedLabelW = label.length * 7;
+          const labelInside = barW + estimatedLabelW + 12 > innerW;
+          const labelX = labelInside ? Math.max(6, barW - 6) : barW + 8;
+          const anchor = labelInside ? "end" : "start";
+          html += `<text class="chart-value-label" x="${labelX}" y="${by + barH - 4}" text-anchor="${anchor}">${escapeSvg(label)}</text>`;
+        }
       });
     });
     series.forEach((s, index) => {
@@ -836,7 +992,7 @@
   }
 
   function drawVerticalGroupedBars(target, rows, series, options) {
-    const width = Math.max(target.clientWidth || 760, rows.length * 126 + 120);
+    const width = Math.max(target.clientWidth || 760, 620);
     const height = target.classList.contains("tall") ? 380 : 315;
     const margin = { top: 30, right: 24, bottom: 78, left: 58 };
     const innerW = width - margin.left - margin.right;
@@ -846,7 +1002,7 @@
     const gap = 6;
     const barW = Math.max(10, Math.min(26, (groupW - 24) / series.length - gap));
     const valueFormat = options.valueFormat || fmtNumber;
-    let html = `<svg class="svg-chart wide-chart" style="min-width:${width}px" viewBox="0 0 ${width} ${height}" role="img">`;
+    let html = `<svg class="svg-chart" viewBox="0 0 ${width} ${height}" role="img">`;
     html += `<g transform="translate(${margin.left},${margin.top})">`;
     html += `<line x1="0" x2="${innerW}" y1="${innerH}" y2="${innerH}" stroke="${COLORS.line}"></line>`;
     rows.forEach((row, i) => {
@@ -861,7 +1017,11 @@
         const drillAttrs = options.drill ? ` data-drill="${escapeAttribute(options.drill)}" data-project-id="${row.project_id || ""}"` : "";
         const tooltipText = `${options.label(row)} | ${s.label}: ${valueFormat(value)}`;
         html += `<rect class="${options.drill ? "clickable" : ""}"${drillAttrs} data-tooltip="${escapeAttribute(tooltipText)}" x="${x}" y="${y}" width="${barW}" height="${Math.max(1, h)}" rx="4" fill="${s.color}"></rect>`;
-        html += `<text class="chart-value-label" x="${x + barW / 2}" y="${Math.max(12, y - 7)}" text-anchor="middle">${escapeSvg(valueFormat(value))}</text>`;
+        if (value > 0) {
+          const staggerY = 13 + j * 12;
+          const labelY = Math.max(staggerY, y - 7);
+          html += `<text class="chart-value-label" x="${x + barW / 2}" y="${labelY}" text-anchor="middle">${escapeSvg(valueFormat(value))}</text>`;
+        }
       });
     });
     series.forEach((s, index) => {
@@ -887,8 +1047,11 @@
     const max = new Date(Math.max(...parsed.map((row) => row.endDate.getTime())));
     const margin = { top: 24, right: 24, bottom: 40, left: 182 };
     const spanDays = Math.max(14, Math.ceil((max - min) / 86400000));
-    const tickCount = Math.ceil(spanDays / 14) + 1;
-    const width = Math.max(target.clientWidth || 860, parsed.length > 14 ? 1120 : 860, tickCount * 70 + margin.left + margin.right);
+    const tickInterval = ganttTickInterval(options.frequency);
+    const tickCount = Math.ceil(spanDays / tickInterval.approxDays) + 1;
+    const scaledTimelineWidth = spanDays * tickInterval.pxPerDay + margin.left + margin.right;
+    const tickLabelWidth = tickCount * tickInterval.minLabelWidth + margin.left + margin.right;
+    const width = Math.max(target.clientWidth || 860, parsed.length > 14 ? 1120 : 860, scaledTimelineWidth, tickLabelWidth);
     const height = Math.max(target.classList.contains("xlarge") ? 500 : 280, parsed.length * 28 + 94);
     const innerW = width - margin.left - margin.right;
     const rowH = 26;
@@ -896,7 +1059,7 @@
     const xScale = (date) => margin.left + (date - min) / span * innerW;
     let html = `<svg class="svg-chart wide-chart" style="min-width:${width}px" viewBox="0 0 ${width} ${height}">`;
     html += `<line x1="${margin.left}" x2="${margin.left + innerW}" y1="${height - margin.bottom}" y2="${height - margin.bottom}" stroke="${COLORS.line}"></line>`;
-    for (let tick = new Date(min.getTime()), index = 0; tick <= max; tick = new Date(tick.getTime() + 14 * 86400000), index += 1) {
+    for (let tick = new Date(min.getTime()), index = 0; tick <= max; tick = addGanttTick(tick, tickInterval), index += 1) {
       const x = xScale(tick);
       html += `<line x1="${x}" x2="${x}" y1="${margin.top - 8}" y2="${height - margin.bottom}" stroke="${COLORS.line}" opacity="${index % 2 === 0 ? ".55" : ".32"}"></line>`;
       html += `<text class="tiny-label" x="${x}" y="${height - 14}" text-anchor="middle">${formatShortDate(tick)}</text>`;
@@ -913,6 +1076,29 @@
     target.innerHTML = html;
   }
 
+  function syncGanttFrequencyControl(key) {
+    const control = document.querySelector(`[data-gantt-frequency="${key}"]`);
+    if (control) control.value = state.ganttFrequency[key] || "fortnight";
+  }
+
+  function ganttTickInterval(frequency) {
+    return {
+      week: { unit: "day", amount: 7, approxDays: 7, minLabelWidth: 64, pxPerDay: 18 },
+      fortnight: { unit: "day", amount: 14, approxDays: 14, minLabelWidth: 70, pxPerDay: 11 },
+      month: { unit: "month", amount: 1, approxDays: 31, minLabelWidth: 78, pxPerDay: 6 },
+      quarter: { unit: "month", amount: 3, approxDays: 92, minLabelWidth: 88, pxPerDay: 2.8 }
+    }[frequency] || { unit: "day", amount: 14, approxDays: 14, minLabelWidth: 70, pxPerDay: 11 };
+  }
+
+  function addGanttTick(date, interval) {
+    const next = new Date(date.getTime());
+    if (interval.unit === "month") {
+      next.setMonth(next.getMonth() + interval.amount);
+      return next;
+    }
+    return new Date(next.getTime() + interval.amount * 86400000);
+  }
+
   function drawDonutChart(targetId, rows) {
     const target = document.getElementById(targetId);
     if (!rows.length) {
@@ -920,21 +1106,67 @@
       return;
     }
     const total = rows.reduce((acc, row) => acc + row.value, 0) || 1;
-    let start = 0;
+    let startAngle = -90;
+    const cx = 94;
+    const cy = 94;
+    const outer = 82;
+    const inner = 50;
     const segments = rows.map((row) => {
-      const degrees = row.value / total * 360;
-      const segment = `${row.color} ${start}deg ${start + degrees}deg`;
-      start += degrees;
+      const endAngle = startAngle + (row.value / total * 360);
+      const path = donutSegmentPath(cx, cy, outer, inner, startAngle, endAngle);
+      const segment = { ...row, path };
+      startAngle = endAngle;
       return segment;
     });
     target.innerHTML = `
-      <div style="display:grid;place-items:center;min-height:260px">
-        <div class="donut-ring" style="width:180px;height:180px;background:conic-gradient(${segments.join(",")})"><span style="width:112px;height:112px;font-size:30px">${total}</span></div>
+      <div class="risk-mix-layout">
+        <svg class="risk-mix-donut" viewBox="0 0 188 188" role="img" aria-label="Risk mix category distribution">
+          ${segments.map((row) => `
+            <path
+              class="risk-mix-segment clickable ${row.active ? "active" : ""}"
+              data-risk-mix-type="${escapeAttribute(row.label)}"
+              data-tooltip="${escapeAttribute(`${row.label}: ${row.value}`)}"
+              d="${row.path}"
+              fill="${row.color}">
+            </path>
+          `).join("")}
+          <circle cx="${cx}" cy="${cy}" r="${inner - 2}" fill="#fff"></circle>
+          <text class="donut-total" x="${cx}" y="${cy - 2}" text-anchor="middle">${total}</text>
+          <text class="tiny-label" x="${cx}" y="${cy + 18}" text-anchor="middle">actions</text>
+        </svg>
         <div class="metric-list" style="width:100%;margin-top:14px">
-          ${rows.map((row) => `<div class="metric-row"><span><span class="pill ${escapeAttribute(row.label)}">${escapeHtml(row.label)}</span></span><strong>${row.value}</strong><span></span><span></span></div>`).join("")}
+          ${rows.map((row) => `
+            <button class="risk-mix-toggle ${row.active ? "active" : ""}" data-risk-mix-type="${escapeAttribute(row.label)}">
+              <span><span class="risk-dot" style="background:${row.color}"></span>${escapeHtml(row.label)}</span>
+              <strong>${row.value}</strong>
+            </button>
+          `).join("")}
         </div>
       </div>
     `;
+  }
+
+  function donutSegmentPath(cx, cy, outerRadius, innerRadius, startAngle, endAngle) {
+    const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+    const outerStart = polarPoint(cx, cy, outerRadius, startAngle);
+    const outerEnd = polarPoint(cx, cy, outerRadius, endAngle);
+    const innerEnd = polarPoint(cx, cy, innerRadius, endAngle);
+    const innerStart = polarPoint(cx, cy, innerRadius, startAngle);
+    return [
+      `M ${outerStart.x} ${outerStart.y}`,
+      `A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${outerEnd.x} ${outerEnd.y}`,
+      `L ${innerEnd.x} ${innerEnd.y}`,
+      `A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${innerStart.x} ${innerStart.y}`,
+      "Z"
+    ].join(" ");
+  }
+
+  function polarPoint(cx, cy, radius, angleDegrees) {
+    const angle = angleDegrees * Math.PI / 180;
+    return {
+      x: cx + radius * Math.cos(angle),
+      y: cy + radius * Math.sin(angle)
+    };
   }
 
   function drawPulse(targetId, rows) {
